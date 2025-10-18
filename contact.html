@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DAHAR Logistics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="logo1.jpg" alt="DAHAR Logo">
+                        <span>DAHAR Logistics</span>
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html">Track Shipment</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="quote.html" class="btn-primary">Get Quote</a></li>
+                        <li><a href="login.html" class="btn-secondary">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We're here to help with all your logistics needs</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content-grid">
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="shipping">Shipping Question</option>
+                                    <option value="tracking">Tracking Issue</option>
+                                    <option value="quote">Request Quote</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-large">Send Message</button>
+                        </form>
+                        <div id="contactFormSuccess" class="form-success hidden">
+                            <div class="success-icon">✓</div>
+                            <h3>Message Sent Successfully!</h3>
+                            <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-container">
+                        <div class="contact-info-card">
+                            <h3>Contact Information</h3>
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon">📞</div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:+2349122585702">+234 91 2258 5702</a></p>
+                                    <p class="detail-note">24/7 Customer Support</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon">✉️</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:daharlogistics@gmail.com">daharlogistics@gmail.com</a></p>
+                                    <p class="detail-note">Response within 24 hours</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon">📍</div>
+                                <div>
+                                    <h4>Head Office</h4>
+                                    <p>Lagos, Nigeria</p>
+                                    <p class="detail-note">Visit by appointment</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon">⏰</div>
+                                <div>
+                                    <h4>Business Hours</h4>
+                                    <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                                    <p class="detail-note">Customer support available 24/7</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <h3>Other Ways to Reach Us</h3>
+                            <ul class="contact-methods">
+                                <li>
+                                    <strong>For Urgent Matters:</strong><br>
+                                    Call our hotline: <a href="tel:+2349122585702">+234 91 2258 5702</a>
+                                </li>
+                                <li>
+                                    <strong>Track Your Shipment:</strong><br>
+                                    <a href="tracking.html">Visit our tracking page</a>
+                                </li>
+                                <li>
+                                    <strong>Get a Quote:</strong><br>
+                                    <a href="quote.html">Use our online quote calculator</a>
+                                </li>
+                                <li>
+                                    <strong>Customer Portal:</strong><br>
+                                    <a href="login.html">Login to your account</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="locations">
+            <div class="container">
+                <h2>Our Locations</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <h3>Lagos (Head Office)</h3>
+                        <p>Ikeja, Lagos State</p>
+                        <p>📞 +234 91 2258 5702</p>
+                    </div>
+                    <div class="location-card">
+                        <h3>Lagos </h3>
+                        <p>Apapa Port, Lagos State</p>
+                        <p>📞 +234 91 2258 5702</p>
+                    </div>
+                    <div class="location-card">
+                        <h3>Lagos </h3>
+                        <p>Abuja, Lagos State</p>
+                        <p>📞 +234 91 2258 5702</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About DAHAR</h4>
+                    <p>Leading logistics company providing reliable delivery solutions across Nigeria and worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html">Track Shipment</a></li>
+                        <li><a href="quote.html">Get Quote</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="domestic.html">Domestic Shipping</a></li>
+                        <li><a href="international.html">International Shipping</a></li>
+                        <li><a href="warehousing.html">Warehousing</a></li>
+                        <li><a href="login.html">Customer Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+2349122585702">+234 91 2258 5702</a></li>
+                        <li><a href="mailto:daharlogistics@gmail.com">daharlogistics@gmail.com</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DAHAR Logistics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Shipment - DAHAR Logistics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="logo1.jpg" alt="DAHAR Logo">
+                        <span>DAHAR Logistics</span>
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html" class="active">Track Shipment</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="quote.html" class="btn-primary">Get Quote</a></li>
+                        <li><a href="login.html" class="btn-secondary">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Track Your Shipment</h1>
+                <p>Real-time tracking for all your deliveries</p>
+            </div>
+        </section>
+
+        <section class="tracking-section">
+            <div class="container">
+                <div class="tracking-form-container">
+                    <div class="tracking-form-card">
+                        <h2>Enter Tracking Number</h2>
+                        <p>Enter your tracking number below to see your shipment status</p>
+                        <form id="trackingForm" class="tracking-form-main">
+                            <input type="text" id="trackingNumber" placeholder="e.g., DHL123456789" required
+                                pattern="[A-Z]{2,4}[0-9]{9,12}">
+                            <button type="submit" class="btn-primary">Track Shipment</button>
+                        </form>
+                        <p class="form-help">Tracking numbers are sent to your email and SMS after booking</p>
+                    </div>
+                </div>
+
+                <div id="trackingResults" class="tracking-results hidden">
+                    <div class="results-card">
+                        <div class="results-header">
+                            <h2>Shipment Details</h2>
+                            <span id="trackingNumberDisplay" class="tracking-badge"></span>
+                        </div>
+
+                        <div class="shipment-info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Status</span>
+                                <span id="shipmentStatus" class="info-value status-badge"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Origin</span>
+                                <span id="shipmentOrigin" class="info-value"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Destination</span>
+                                <span id="shipmentDestination" class="info-value"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Estimated Delivery</span>
+                                <span id="estimatedDelivery" class="info-value"></span>
+                            </div>
+                        </div>
+
+                        <div class="tracking-timeline">
+                            <h3>Tracking History</h3>
+                            <div id="trackingTimeline" class="timeline">
+                            </div>
+                        </div>
+
+                        <div class="tracking-actions">
+                            <button onclick="window.print()" class="btn-secondary">Print Details</button>
+                            <a href="contact.html" class="btn-secondary">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="trackingError" class="tracking-error hidden">
+                    <div class="error-card">
+                        <div class="error-icon">⚠️</div>
+                        <h3>Tracking Number Not Found</h3>
+                        <p>We couldn't find any shipment with this tracking number. Please check and try again.</p>
+                        <button onclick="resetTracking()" class="btn-primary">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tracking-info">
+            <div class="container">
+                <h2>About Tracking</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📱 Real-Time Updates</h3>
+                        <p>Get instant notifications via SMS and email at every stage of your shipment's journey.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🔔 Status Notifications</h3>
+                        <p>Receive alerts when your package is picked up, in transit, out for delivery, and delivered.
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📞 24/7 Support</h3>
+                        <p>Our customer service team is available round the clock to assist with any tracking queries.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tracking-help">
+                    <h3>Need Help with Tracking?</h3>
+                    <p>Contact us:</p>
+                    <div class="contact-options">
+                        <a href="tel:+2349122585702" class="contact-option">
+                            <span class="icon">📞</span>
+                            <span>+234 91 2258 5702</span>
+                        </a>
+                        <a href="mailto:daharlogistics@gmail.com" class="contact-option">
+                            <span class="icon">✉️</span>
+                            <span>daharlogistics@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About DAHAR</h4>
+                    <p>Leading logistics company providing reliable delivery solutions across Nigeria and worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html">Track Shipment</a></li>
+                        <li><a href="quote.html">Get Quote</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="domestic.html">Domestic Shipping</a></li>
+                        <li><a href="international.html">International Shipping</a></li>
+                        <li><a href="warehousing.html">Warehousing</a></li>
+                        <li><a href="login.html">Customer Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+2349122585702">+234 91 2258 5702</a></li>
+                        <li><a href="daharlogistics@gmail.com">daharlogistics@gmail.com</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DAHAR Logistics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

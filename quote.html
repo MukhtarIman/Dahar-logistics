@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Quote - DAHAR Logistics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="logo1.jpg" alt="DAHAR Logo">
+                        <span>DAHAR Logistics</span>
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html">Track Shipment</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="quote.html" class="btn-primary active">Get Quote</a></li>
+                        <li><a href="login.html" class="btn-secondary">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Get a Quote</h1>
+                <p>Instant shipping cost calculation</p>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <div class="quote-grid">
+                    <div class="quote-form-container">
+                        <h2>Shipping Details</h2>
+                        <form id="quoteForm" class="quote-form">
+                            <div class="form-step active" id="step1">
+                                <h3>Step 1: Shipment Type</h3>
+                                <div class="form-group">
+                                    <label>Select Shipment Type *</label>
+                                    <div class="radio-group">
+                                        <label class="radio-card">
+                                            <input type="radio" name="shipmentType" value="domestic" checked>
+                                            <span class="radio-content">
+                                                <strong>Domestic</strong>
+                                                <small>Within Nigeria</small>
+                                            </span>
+                                        </label>
+                                        <label class="radio-card">
+                                            <input type="radio" name="shipmentType" value="international">
+                                            <span class="radio-content">
+                                                <strong>International</strong>
+                                                <small>Worldwide shipping</small>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="origin">Origin *</label>
+                                        <input type="text" id="origin" name="origin" placeholder="e.g., Lagos" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="destination">Destination *</label>
+                                        <input type="text" id="destination" name="destination" placeholder="e.g., Abuja"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn-primary" onclick="nextStep(2)">Next Step</button>
+                            </div>
+
+                            <div class="form-step" id="step2">
+                                <h3>Step 2: Package Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="weight">Weight (kg) *</label>
+                                        <input type="number" id="weight" name="weight" min="0.1" step="0.1"
+                                            placeholder="0.0" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="quantity">Quantity *</label>
+                                        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="length">Length (cm)</label>
+                                        <input type="number" id="length" name="length" min="1" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="width">Width (cm)</label>
+                                        <input type="number" id="width" name="width" min="1" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="height">Height (cm)</label>
+                                        <input type="number" id="height" name="height" min="1" placeholder="0">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="packageType">Package Type *</label>
+                                    <select id="packageType" name="packageType" required>
+                                        <option value="">Select package type</option>
+                                        <option value="documents">Documents</option>
+                                        <option value="parcel">Parcel</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="clothing">Clothing</option>
+                                        <option value="food">Food Items</option>
+                                        <option value="fragile">Fragile Items</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-buttons">
+                                    <button type="button" class="btn-secondary" onclick="prevStep(1)">Previous</button>
+                                    <button type="button" class="btn-primary" onclick="nextStep(3)">Next Step</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step3">
+                                <h3>Step 3: Contact Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name *</label>
+                                        <input type="text" id="fullName" name="fullName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="quoteEmail">Email *</label>
+                                        <input type="email" id="quoteEmail" name="quoteEmail" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="quotePhone">Phone Number *</label>
+                                        <input type="tel" id="quotePhone" name="quotePhone" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="company">Company (Optional)</label>
+                                        <input type="text" id="company" name="company">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="additionalInfo">Additional Information</label>
+                                    <textarea id="additionalInfo" name="additionalInfo" rows="3"
+                                        placeholder="Any special requirements or notes"></textarea>
+                                </div>
+
+                                <div class="form-buttons">
+                                    <button type="button" class="btn-secondary" onclick="prevStep(2)">Previous</button>
+                                    <button type="submit" class="btn-primary">Calculate Quote</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="quoteResult" class="quote-result hidden">
+                            <h3>Your Shipping Quote</h3>
+                            <div class="quote-summary">
+                                <div class="quote-route">
+                                    <div class="route-point">
+                                        <span class="route-label">From</span>
+                                        <span id="resultOrigin" class="route-value"></span>
+                                    </div>
+                                    <div class="route-arrow">→</div>
+                                    <div class="route-point">
+                                        <span class="route-label">To</span>
+                                        <span id="resultDestination" class="route-value"></span>
+                                    </div>
+                                </div>
+
+                                <div class="quote-details">
+                                    <div class="detail-row">
+                                        <span>Weight:</span>
+                                        <span id="resultWeight"></span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>Package Type:</span>
+                                        <span id="resultPackageType"></span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>Quantity:</span>
+                                        <span id="resultQuantity"></span>
+                                    </div>
+                                </div>
+
+                                <div class="quote-options" id="quoteOptions">
+                                </div>
+
+                                <div class="quote-actions">
+                                    <button onclick="resetQuote()" class="btn-secondary">New Quote</button>
+                                    <a href="contact.html" class="btn-primary">Book Shipment</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="quote-sidebar">
+                        <div class="sidebar-card">
+                            <h3>Why Get a Quote?</h3>
+                            <ul class="benefits-list">
+                                <li>Instant price calculation</li>
+                                <li>Compare service options</li>
+                                <li>No hidden fees</li>
+                                <li>Valid for 7 days</li>
+                                <li>No obligation</li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Need Help?</h3>
+                            <p>Our team is ready to assist you with your shipping needs</p>
+                            <a href="tel:+2349122585702" class="contact-link">📞 +234 91 2258 5702</a>
+                            <a href="daharlogistics@gmail.com" class="contact-link">✉️ daharlogistics@gmail.com</a>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Shipping Tips</h3>
+                            <ul class="tips-list">
+                                <li>Pack items securely</li>
+                                <li>Provide accurate weights</li>
+                                <li>Include contact information</li>
+                                <li>Consider insurance for valuables</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About DAHAR</h4>
+                    <p>Leading logistics company providing reliable delivery solutions across Nigeria and worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html">Track Shipment</a></li>
+                        <li><a href="quote.html">Get Quote</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="domestic.html">Domestic Shipping</a></li>
+                        <li><a href="international.html">International Shipping</a></li>
+                        <li><a href="warehousing.html">Warehousing</a></li>
+                        <li><a href="login.html">Customer Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+2349122585702">+234 91 2258 5702</a></li>
+                        <li><a href="mailto:daharlogistics@gmail.com">daharlogistics@gmail.com</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DAHAR Logistics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
